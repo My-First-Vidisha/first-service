@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: first
+spec:
+  selector:
+    matchLabels:
+      app: first
+  replicas: 1
+  template: # template for the pods
+    metadata:
+      labels:
+        app: first
+    spec:
+      containers:
+      - name: first
+        image: dineshdocker3246/first:latest
+        
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: first-api
+
+spec:
+  selector:
+    app: first
+
+  ports:
+    - name: http
+      port: 8080
+
+  type: ClusterIP
