@@ -27,7 +27,7 @@ public class FisrtController {
 	@GetMapping("/call")
 	public ResponseEntity<String> getCallMessage() {
 
-		Mono<String> mono = webClient.get().uri("http://localhost:8084/second/new").retrieve().bodyToMono(String.class);
+		Mono<String> mono = webClient.get().uri("http://second:8084/second/new").retrieve().bodyToMono(String.class);
 
 		return new ResponseEntity<String>("First Service Kya bat bava !!!!!!!   " + mono.block(), HttpStatus.OK);
 	}
