@@ -25,7 +25,7 @@ public class FisrtController {
 	
 	@GetMapping
 	public ResponseEntity<String> getMessage() {
-		return new ResponseEntity<String>("hello, From First Service", HttpStatus.OK);
+		return new ResponseEntity<String>(" Kata Laga Bro!!!, From First Service", HttpStatus.OK);
 	}
 
 	@GetMapping("/call")
